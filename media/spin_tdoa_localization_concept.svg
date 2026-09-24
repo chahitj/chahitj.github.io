@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <path d="M0,0 L6,2 L0,4" fill="none" stroke="#555" stroke-width="0.8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="560" fill="#fafafa" rx="4"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="15" font-weight="600" fill="#1a1a1a">TDoA localization concept</text>
+
+  <!-- Field context: subtle crop rows -->
+  <g opacity="0.12" stroke="#4a7c59" stroke-width="1.2">
+    <line x1="80" y1="90" x2="80" y2="480"/>
+    <line x1="120" y1="90" x2="120" y2="480"/>
+    <line x1="160" y1="90" x2="160" y2="480"/>
+    <line x1="200" y1="90" x2="200" y2="480"/>
+    <line x1="240" y1="90" x2="240" y2="480"/>
+    <line x1="280" y1="90" x2="280" y2="480"/>
+    <line x1="320" y1="90" x2="320" y2="480"/>
+    <line x1="360" y1="90" x2="360" y2="480"/>
+    <line x1="400" y1="90" x2="400" y2="480"/>
+    <line x1="440" y1="90" x2="440" y2="480"/>
+    <line x1="480" y1="90" x2="480" y2="480"/>
+    <line x1="520" y1="90" x2="520" y2="480"/>
+    <line x1="560" y1="90" x2="560" y2="480"/>
+    <line x1="600" y1="90" x2="600" y2="480"/>
+    <line x1="640" y1="90" x2="640" y2="480"/>
+    <line x1="680" y1="90" x2="680" y2="480"/>
+  </g>
+  <text x="400" y="500" text-anchor="middle" font-size="10" fill="#999" font-style="italic">crop rows (schematic)</text>
+
+  <!-- Anchors (fixed positions) -->
+  <g>
+    <!-- A1 top-left -->
+    <circle cx="160" cy="120" r="10" fill="#2563eb" opacity="0.9"/>
+    <text x="160" y="124" text-anchor="middle" font-size="9" fill="white" font-weight="600">A1</text>
+
+    <!-- A2 top-right -->
+    <circle cx="600" cy="120" r="10" fill="#2563eb" opacity="0.9"/>
+    <text x="600" y="124" text-anchor="middle" font-size="9" fill="white" font-weight="600">A2</text>
+
+    <!-- A3 bottom-left -->
+    <circle cx="160" cy="430" r="10" fill="#2563eb" opacity="0.9"/>
+    <text x="160" y="434" text-anchor="middle" font-size="9" fill="white" font-weight="600">A3</text>
+
+    <!-- A4 bottom-right -->
+    <circle cx="600" cy="430" r="10" fill="#2563eb" opacity="0.9"/>
+    <text x="600" y="434" text-anchor="middle" font-size="9" fill="white" font-weight="600">A4</text>
+  </g>
+
+  <!-- Rover (unknown position) -->
+  <circle cx="400" cy="290" r="14" fill="#dc2626" opacity="0.9"/>
+  <text x="400" y="294" text-anchor="middle" font-size="9" fill="white" font-weight="600">R</text>
+
+  <!-- Signal paths (rover to each anchor) -->
+  <g stroke="#dc2626" stroke-width="1.2" stroke-dasharray="6,3" opacity="0.5">
+    <line x1="400" y1="290" x2="160" y2="120"/>
+    <line x1="400" y1="290" x2="600" y2="120"/>
+    <line x1="400" y1="290" x2="160" y2="430"/>
+    <line x1="400" y1="290" x2="600" y2="430"/>
+  </g>
+
+  <!-- TDoA hyperbola 1: pair (A1, A2) — difference of distances to A1 and A2 -->
+  <!-- Hyperbola with foci at A1(160,120) and A2(600,120), constant difference -->
+  <path d="M340,160 Q400,240 340,340" fill="none" stroke="#7c3aed" stroke-width="1.8" opacity="0.7"/>
+  <path d="M460,160 Q400,240 460,340" fill="none" stroke="#7c3aed" stroke-width="1.8" opacity="0.7"/>
+  <text x="325" y="170" font-size="9" fill="#7c3aed" font-weight="500">Δd₁₂ = const</text>
+
+  <!-- TDoA hyperbola 2: pair (A3, A4) — difference of distances to A3 and A4 -->
+  <path d="M340,240 Q400,320 340,410" fill="none" stroke="#059669" stroke-width="1.8" opacity="0.7"/>
+  <path d="M460,240 Q400,320 460,410" fill="none" stroke="#059669" stroke-width="1.8" opacity="0.7"/>
+  <text x="465" y="410" font-size="9" fill="#059669" font-weight="500">Δd₃₄ = const</text>
+
+  <!-- Intersection marker -->
+  <circle cx="400" cy="290" r="20" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <!-- Legend box -->
+  <rect x="525" y="395" width="260" height="140" rx="6" fill="white" stroke="#ddd" stroke-width="1"/>
+  <text x="540" y="415" font-size="10" font-weight="600" fill="#1a1a1a">How it works</text>
+  <circle cx="545" cy="433" r="4" fill="#2563eb"/>
+  <text x="556" y="437" font-size="9" fill="#555">Fixed LoRa anchors (A1–A4)</text>
+  <circle cx="545" cy="453" r="4" fill="#dc2626"/>
+  <text x="556" y="457" font-size="9" fill="#555">Rover transmits a packet</text>
+  <line x1="537" y1="470" x2="553" y2="470" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="556" y="474" font-size="9" fill="#555">Range-difference hyperbola</text>
+  <line x1="537" y1="490" x2="553" y2="490" stroke="#059669" stroke-width="1.5"/>
+  <text x="556" y="494" font-size="9" fill="#555">Second pair constrains position</text>
+  <text x="540" y="518" font-size="9" fill="#666" font-style="italic">Anchors receive the same packet</text>
+  <text x="540" y="530" font-size="9" fill="#666" font-style="italic">at slightly different times.</text>
+
+  <!-- Mathematical annotation -->
+  <rect x="60" y="505" width="420" height="38" rx="4" fill="#f3f4f6" stroke="#e5e7eb"/>
+  <text x="80" y="520" font-size="11" fill="#374151" font-family="Georgia, serif" font-style="italic">
+    c · Δt<tspan baseline-shift="sub" font-size="8">ij</tspan> = ‖x − a<tspan baseline-shift="sub" font-size="8">i</tspan>‖ − ‖x − a<tspan baseline-shift="sub" font-size="8">j</tspan>‖
+  </text>
+  <text x="80" y="535" font-size="8.5" fill="#6b7280">
+    each time-difference defines a hyperbolic constraint; multiple pairs intersect at the rover position
+  </text>
+</svg>

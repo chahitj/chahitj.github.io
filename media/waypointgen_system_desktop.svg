@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" role="img" aria-labelledby="title desc">
+  <title id="title">WaypointGen global and local planning</title>
+  <desc id="desc">A natural-language instruction is split between a global crop-row graph and local obstacle-aware candidate selection. The global branch produces waypoints that guide the local branch.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#7288a7" stroke-width="1.5" stroke-linecap="round"/></marker>
+  </defs>
+  <rect x="1" y="1" width="878" height="418" rx="14" fill="#f7f9fc" stroke="#dce4ed" stroke-width="2"/>
+  <g font-family="system-ui, sans-serif">
+    <text x="32" y="39" fill="#1749cb" font-size="13" font-weight="700" letter-spacing="1.4">GLOBAL ROUTE + LOCAL PATH</text>
+    <rect x="274" y="59" width="332" height="55" rx="8" fill="#1d3e91"/>
+    <text x="440" y="93" text-anchor="middle" fill="white" font-size="18" font-weight="650">Natural-language instruction</text>
+    <path d="M440 114v25m0 0H229m211 0h211" stroke="#7288a7" stroke-width="2" fill="none"/>
+    <path d="M229 139v14m422-14v14" stroke="#7288a7" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="32" y="158" width="395" height="185" rx="11" fill="#fff" stroke="#9db7e8" stroke-width="2"/>
+    <rect x="453" y="158" width="395" height="185" rx="11" fill="#fff" stroke="#9ed7c6" stroke-width="2"/>
+    <text x="53" y="187" fill="#1749cb" font-size="13" font-weight="700" letter-spacing="1">GLOBAL STRUCTURE</text>
+    <text x="474" y="187" fill="#14745a" font-size="13" font-weight="700" letter-spacing="1">LOCAL GEOMETRY</text>
+    <text x="53" y="224" fill="#1d2b3e" font-size="20" font-weight="700">Overhead imagery → crop rows</text>
+    <text x="53" y="258" fill="#506175" font-size="16">Spatial graph of aisles and endpoints</text>
+    <text x="53" y="297" fill="#1749cb" font-size="17" font-weight="650">Qwen-guided global waypoints</text>
+    <text x="474" y="224" fill="#1d2b3e" font-size="20" font-weight="700">RGB-D → semantic BEV</text>
+    <text x="474" y="258" fill="#506175" font-size="16">MPPI trajectory candidates</text>
+    <text x="474" y="297" fill="#14745a" font-size="17" font-weight="650">Language-conditioned selection</text>
+    <path d="M429 307h19" stroke="#7288a7" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="440" y="384" text-anchor="middle" fill="#506175" font-size="15">Global waypoints provide route context for local candidate selection.</text>
+  </g>
+</svg>

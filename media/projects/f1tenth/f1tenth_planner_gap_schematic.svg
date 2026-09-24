@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title desc">
+  <title id="title">Schematic of Follow-the-Gap steering toward false free space</title>
+  <desc id="desc">The planner's perceived barrier has a false open sector where returns were unreliable. A steering arrow points from the car toward that apparent opening.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M1 1 L7 4 L1 7" fill="none" stroke="#1749cb" stroke-width="1.5" />
+    </marker>
+  </defs>
+  <rect width="320" height="180" fill="#fff" />
+  <rect x="0.5" y="0.5" width="319" height="179" fill="none" stroke="#dce1e6" />
+  <text x="16" y="24" fill="#4c5663" font-family="system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">SCHEMATIC · PLANNER VIEW</text>
+
+  <rect x="38" y="88" width="42" height="26" rx="3" fill="#e6ebef" stroke="#171c23" stroke-width="1.5" />
+  <path d="M80 92 L87 101 L80 110" fill="none" stroke="#171c23" stroke-width="1.5" />
+  <text x="35" y="132" fill="#171c23" font-family="system-ui, sans-serif" font-size="13">Car</text>
+
+  <rect x="267" y="44" width="8" height="39" fill="#171c23" />
+  <rect x="267" y="119" width="8" height="30" fill="#171c23" />
+  <path d="M271 84 L271 118" fill="none" stroke="#aab3bc" stroke-width="2" stroke-dasharray="4 4" />
+  <path d="M94 101 L252 101" fill="none" stroke="#1749cb" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="134" y="80" fill="#1749cb" font-family="system-ui, sans-serif" font-size="13">False opening</text>
+  <text x="112" y="153" fill="#4c5663" font-family="system-ui, sans-serif" font-size="12">Gap-selected heading</text>
+</svg>
